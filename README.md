@@ -6,7 +6,7 @@ I used infrastructure automation tools are Terraform and Ansible
 
 
 ############        Task 01         #############
--------
+-------------------------------------------------
 
 ## Terraform:
 -------------
@@ -47,7 +47,7 @@ Terraform is a tool for building, changing, and versioning infrastructure safely
        
 
 ############        Task 02         #############       
-
+-------------------------------------------------
 ## Ansible:
    --------
 Ansible is a radically simple IT automation system. It handles configuration management, application deployment, cloud provisioning, ad-hoc task-execution, and multinode orchestration. Including zero-downtime rolling updates with load balancers.
@@ -119,7 +119,7 @@ Ansible is a radically simple IT automation system. It handles configuration man
 -> NVM stands for Node Version Manager. It can manage and switch between diff Node versions with easily. and we can install diff versions with a single command.
 
  ############        Task 03         #############     
-
+--------------------------------------------------
 => Using configuration management tool(Ansible) to automate the entire installation of apache and deploy a sample html file from a GitHub repository.
 
 Github
