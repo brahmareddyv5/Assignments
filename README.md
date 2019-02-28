@@ -135,7 +135,7 @@ Github
         
 		$ git commit -m "first commit"
     
--> Add the local repository to remote bu using "git remote add origin <https:repositoryname>"
+-> Add the local repository to remote by using "git remote add origin <https:repositoryname>"
 
 -> Push the changes using " git push -u origin master"
 
@@ -151,7 +151,8 @@ Github
 
 -> Opened the content inside the sample.html
 
-
+ Code :  test3/apache.yml file
+ ------
 ############        Task 04         #############     
 -------------------------------------------------
 => Using configuration management tool(Ansible) to automate the entire installation of CouchDB Database.
@@ -194,8 +195,8 @@ bind_address = 0.0.0.0
 
         http://<pubip>:5984/_utils/index.html
 
-
-
+ Code :  test2/apache_CouchDB.yml file
+ ------
 
 
 
