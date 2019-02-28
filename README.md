@@ -32,7 +32,7 @@ Terraform is a tool for building, changing, and versioning infrastructure safely
   Here, I'm using terraform script. 
 
 => Provider -> AWS
-    -> Here, create two variables for accesskey and secretkey for security.
+    * Here, create two variables for accesskey and secretkey for security.
     -> We call these two variable at runtime(execution)
     -> Using .pem(i used terraform.pem) file we provide credentials for login two machines
     -> Used t2.micro as instance type 
