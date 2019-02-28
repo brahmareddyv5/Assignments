@@ -66,14 +66,19 @@ Ansible is a radically simple IT automation system. It handles configuration man
 -> We can create our own(not default) inventory file with localhost
 
 -> ssh-keygen tool is used to generate private/public key pair for ssh. By default, tool generates the private(id_rsa) and public(id_rsa.pub) keys in ~/.ssh/ directory. These key pairs are used for password-less login, Single sign On and hosts authentication.
-    $ ssh-keygen 
+    
+	$ ssh-keygen 
 
 -> Copy the ssh-copy-id to self and node machines
-    $ ssh-copy-id ansible@<serverip/nodeip>
+    
+	$ ssh-copy-id ansible@<serverip/nodeip>
 
 -> Check server and all Nodes pinging are not 
-        $ ansible -m ping all
+    
+    $ ansible -m ping all
+
     o/p: success
+	
 ------
 
 # The following software packages are installed using configuration management tool ansible for provisioned instances.
