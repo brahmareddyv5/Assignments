@@ -1,0 +1,33 @@
+---
+- hosts: WebServer
+  become: yes
+  tasks:
+  - name: Add the official repository of CouchDB
+    shell: echo "deb https://apache.bintray.com/couchdb-deb xenial main" \ | sudo tee -a /etc/apt/sources.list
+  - name: To sign the added repository
+    shell: curl -L https://couchdb.apache.org/repo/bintray-pubkey.asc \ | sudo apt-key add -
+  - name: Install apache2
+    apt:
+      name: apache2
+      state: present
+      update_cache: yes
+  - name: Install python-pip
+    apt:
+      name: python-pip
+      state: present
+      update_cache: yes
+  - name: Install CouchDB
+    apt:
+      name: couchdb
+      state: present
+      update_cache: yes
+  - name: Restart CouchDB
+    service:
+      name: couchdb
+      enabled: yes
+      state: restarted
+  - name: Restart apache2
+    service:
+      name: apache2
+      enabled: yes
+      state: restarted

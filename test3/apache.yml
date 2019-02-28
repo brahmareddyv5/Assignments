@@ -1,0 +1,23 @@
+---
+- hosts: WebServer
+  become: yes
+  tasks:
+  - name: Install git
+    apt:
+      name: git 
+      state: present
+      update_cache: yes
+  - name: Install apache2
+    apt:
+      name: apache2
+      state: present
+      update_cache: yes
+  - name: web application deployment
+    get_url:
+      url: https://raw.githubusercontent.com/brahmareddyv5/assignment/master/sample.html
+      dest: /var/www/html
+  - name: Restart apache2
+    service:
+      name: apache2
+      enabled: yes
+      state: restarted

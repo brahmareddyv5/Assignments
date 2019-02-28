@@ -1,0 +1,39 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Install git
+    apt:
+      name: git
+      state: present
+      update_cache: yes
+  - name: Install Docker
+    apt:
+      name: docker.io
+      state: present
+      update_cache: yes
+  - name: Install OpenSSL
+    apt:
+      name: openssl
+      state: present
+      update_cache: yes
+  - name: Install Docker Compose
+    apt:
+      name: docker-compose
+      state: present
+      update_cache: yes
+  - name: Install build-essential
+    apt:
+      name: build-essential
+      state: present
+      update_cache: yes
+  - name: Install nvm
+    shell: >
+      curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+    args:
+      creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+  - name: Install node v8.12.0
+    shell: source ~/.nvm/nvm.sh && nvm install v8.12.0
+    args:
+      executable: /bin/bash
+      creates: ~/.nvm/versions/node
