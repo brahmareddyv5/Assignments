@@ -71,7 +71,7 @@ Ansible is a radically simple IT automation system. It handles configuration man
 
 -> Copy the ssh-copy-id to self and node machines
     
-	$ ssh-copy-id ansible@<serverip/nodeip>
+	$ ssh-copy-id ansible@localhost
 
 -> Check server and all Nodes pinging are not 
     
@@ -84,15 +84,20 @@ Ansible is a radically simple IT automation system. It handles configuration man
 # The following software packages are installed using configuration management tool ansible for provisioned instances.
 
 •	NVM – Version 0.33.2
+
 •	Node – 8.12.0
+
 •	Docker – 18.06 or latest
+
 •	Docker Compose – 1.13 or latest
+
 •	Openssl – latest version
+
 •	Git – latest version
 
-Login into the both Provisioned instances using .pem keypair
+-> Login into the both Provisioned instances using .pem keypair
 
-Copy the code from any storage to the two machines
+-> Copy the code from any storage to the two machines
 
 # Code :  test2/Packages.yml file
 
@@ -100,14 +105,20 @@ Copy the code from any storage to the two machines
    ------------------------------
 
 ->  Install git for VCS (Version Control System) is a Distributed version control tool is used to store different versions of a file in local or remote repository. 
+
 ->  Git is to track changes in the source code, allows multiple developers to work together.
+
 ->  Openssl is widely used in Internet web servers, serving all websites.
+
 ->  Docker is to create, deploy and run applications by using containers. Docker creates custom images to  writting Dockerfile.
+
 -> Docker-compose is for defining and running multi-container Docker appliations. Use YAML file to configure application's services.
+
 ->  Node.js is a platform built on chrome's JavaScript runtime for building fast, scalable network applicaitons.
+
 -> NVM stands for Node Version Manager. It can manage and switch between diff Node versions with easily. and we can install diff versions with a single command.
 
-############        Task 03         #############     
+ ############        Task 03         #############     
 
 => Using configuration management tool(Ansible) to automate the entire installation of apache and deploy a sample html file from a GitHub repository.
 
