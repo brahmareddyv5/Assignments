@@ -18,10 +18,13 @@ Terraform is a tool for building, changing, and versioning infrastructure safely
   Additional Information
   ----------------------
 
--> Instance Type of both instance is t2.micro.
--> Operating System for both instances Ubuntu Server 16.04 LTS.
--> Hostname of Instance 1 : MSR-test-Instance-1.
--> Hostname of Instance 2 : MSR-test-Instance-2.
+	-> Instance Type of both instance is t2.micro.
+
+	-> Operating System for both instances Ubuntu Server 16.04 LTS.
+	
+	-> Hostname of Instance 1 : MSR-test-Instance-1.
+	
+	-> Hostname of Instance 2 : MSR-test-Instance-2.
     
     
 # Code : from test1/main.tf
@@ -32,6 +35,7 @@ Terraform is a tool for building, changing, and versioning infrastructure safely
   Here, I'm using terraform script. 
 
 => Provider -> AWS
+
     -> Here, create two variables for accesskey and secretkey for security.
 
     -> We call these two variable at runtime(execution)
