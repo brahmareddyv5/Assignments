@@ -5,7 +5,7 @@
 
 ## Task1
 
-Execute these steps from any operating system which is already installed terraform.
+# Execute these steps from any operating system which is already installed terraform.
 
 Steps:
 
