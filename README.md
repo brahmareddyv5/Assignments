@@ -1,5 +1,5 @@
-    ASSIGNMENT
-    ----------
+ ASSIGNMENT
+ ----------
 
 
 I used infrastructure automation tools are Terraform and Ansible 
