@@ -99,8 +99,8 @@ Ansible is a radically simple IT automation system. It handles configuration man
 
 -> Copy the code from any storage to the two machines
 
-# Code :  test2/Packages.yml file
-
+ Code :  test2/Packages.yml file
+ ----
 ## Explanation and Documentation:
    ------------------------------
 
@@ -130,8 +130,10 @@ Github
 -> Created a public repository (assignment) 
 
 -> Written a sample.html file and added to local repository using
-        $ git add .
-        $ git commit -m "first commit"
+        
+		$ git add .
+        
+		$ git commit -m "first commit"
     
 -> Add the local repository to remote bu using "git remote add origin <https:repositoryname>"
 
@@ -149,8 +151,9 @@ Github
 
 -> Opened the content inside the sample.html
 
-############        Task 04         #############     
 
+############        Task 04         #############     
+-------------------------------------------------
 => Using configuration management tool(Ansible) to automate the entire installation of CouchDB Database.
 
 -> Login to MSR-test-Instance-2 using .pem(terrafom)
@@ -164,13 +167,17 @@ Configuration:
 -> Open /etc/couchdb/local.ini file and change the below things
 
 [httpd]
+
 ;port = 5984
+
 ;bind_address = 127.0.0.1
 
 to 
 
 [httpd]
+
 port = 5984
+
 bind_address = 0.0.0.0
 
 -> Restart the CouchDB Database
@@ -178,6 +185,7 @@ bind_address = 0.0.0.0
 -> Check with curl http://<pubip>:5984/ and its output is
 
     {"couchdb":"Welcome","uuid":"<someid>","version":"1.6.0","vendor":{"version":"15.10","name":"Ubuntu"}}
+
         if not check again
 
 -> CouchDB Database runs on 5984 port number
