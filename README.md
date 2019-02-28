@@ -29,7 +29,7 @@ Terraform is a tool for building, changing, and versioning infrastructure safely
 ## Explanation and Documentation:
    ------------------------------
 
-    Here, I'm using terraform script. 
+  Here, I'm using terraform script. 
 
 => Provider -> AWS
     -> Here, create two variables for accesskey and secretkey for security.
