@@ -207,11 +207,17 @@ step:
 
     1. Execute the ansible playbook
 
-        $ ansible-playbook -i <hostsfilepath> <playbookpath>
+        $ ansible-playbook -i hosts Packages.yml
 
 ![playbook_exec](https://user-images.githubusercontent.com/43407156/53620330-8fbe3600-3c18-11e9-9429-baf2691dae99.JPG)
     
+	2. Exit terminal and relogin because of nvm tool will affect 
+	
+		Perform steps 1 again
+	
     Check all packages versions
+	
+![version_check](https://user-images.githubusercontent.com/43407156/53620852-73bb9400-3c1a-11e9-8604-3fd08499e245.JPG)
 	
 ### Code :  test2/Packages.yml file
 ------------- 
