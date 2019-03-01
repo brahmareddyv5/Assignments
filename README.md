@@ -164,18 +164,24 @@ step:
         $ sudo visudo
 
             %sudo 
-            ansible (ALL:ALL) NOPASSWD: ALL
+            ansible ALL=(ALL:ALL) NOPASSWD: ALL
         
     4. Change PasswordAuthentication no to yes
 
         $ sudo /etc/ssh/sshd_config
            PasswordAuthentication yes
-
+	
+		Restart ssh service
+		
+		$ sudo systemctl restart sshd
+		
     5. Create own hosts file 
 
         $ sudo vi hosts
             [WebServer]
             localhost
+			[all]
+			localhost
     
     6. Generate  ssh key 
 
@@ -183,11 +189,15 @@ step:
 
     7. Copy the key
 
-        $ ssh-copy-id ansible@<serverip/nodeip/localhost>
+        $ ssh-copy-id ansible@localhost
 
-    8. Check the Server and Nodes are pinging are not
+	8. Install ansible packages
+	
+		$ sudo apt-get install ansible -y
 
-        $ ansible -m ping all 
+    9. Check the Server and Nodes are pinging are not
+
+        $ ansible -i hosts -m ping all 
 
 # Execute the ansible playbook
 
