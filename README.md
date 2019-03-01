@@ -341,7 +341,6 @@ Configuration:
 -----
 
 # Login to MSR-test-Instance-2 using ansible user credentials
-
 	
 
 steps:
