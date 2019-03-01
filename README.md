@@ -45,8 +45,6 @@ Steps:
     4.  To destroy the Infrastructure before applied configuration
 
         $   terraform destroy -var "accesskey=<accesskeycode>" -var "secretkey=<secretkeycode>" <Pathofthecode>   
-   
-# Code : from test1/main.tf
 
 ## Explanation and Documentation:
    ------------------------------
@@ -63,12 +61,13 @@ Steps:
 
     -> Used t2.micro as instance type 
     
-       
-
+### Code : from test1/main.tf       
+-------------
 ############        Task 02         #############       
 -------------------------------------------------
+
 ## Ansible:
-   --------
+
 Ansible is a radically simple IT automation system. It handles configuration management, application deployment, cloud provisioning, ad-hoc task-execution, and multinode orchestration. Including zero-downtime rolling updates with load balancers.
 
 # Configure Both machines: 
@@ -118,8 +117,6 @@ Ansible is a radically simple IT automation system. It handles configuration man
 
 -> Copy the code from any storage to the two machines
 
- Code :  test2/Packages.yml file
- ----
 ## Explanation and Documentation:
    ------------------------------
 
@@ -192,7 +189,9 @@ step:
 
     
     Check all packages versions
- 
+	
+### Code :  test2/Packages.yml file
+------------- 
  ############        Task 03         #############     
 --------------------------------------------------
 => Using configuration management tool(Ansible) to automate the entire installation of apache and deploy a sample html file from a GitHub repository.
@@ -240,7 +239,7 @@ steps:
 
 
 ### Code :  test3/apache.yml file
- ------
+-------
 ############        Task 04         #############     
 -------------------------------------------------
 => Using configuration management tool(Ansible) to automate the entire installation of CouchDB Database.
