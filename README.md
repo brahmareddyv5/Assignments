@@ -296,38 +296,37 @@ steps:
 
 => Using configuration management tool(Ansible) to automate the entire installation of CouchDB Database.
 
--> Login to MSR-test-Instance-2 using Password
+-> Login to MSR-test-Instance-2 using ansible user credentials
 
-	$ ssh ansible@52.23.109.53
+	$ ssh ansible@52.70.109.198
 	
 		Password: ansible123
 
 
--> After Installation using ( ansible-playbook -i <hostsfilepath> <pathofCONFIGfile>) 
+-> After Installation using 
+
+	$ ansible-playbook -i hosts apache_CouchDB.yml 
 
 -> If we want to access the Futon-web GUI want configure
 
 Configuration:
 --------------
--> Open /etc/couchdb/local.ini file and change the below things
 
-[httpd]
+-> Open /opt/couchdb/etc/local.ini file and change the below things
 
-;port = 5984
+			[chttpd]
+            ;port = 5984
+            ;bind_address = 127.0.0.1
 
-;bind_address = 127.0.0.1
+            to 
 
-to 
-
-[httpd]
-
-port = 5984
-
-bind_address = 0.0.0.0
-
+            [chttpd]
+            port = 5984
+            bind_address = 0.0.0.0
+			
 -> Restart the CouchDB Database
 
--> Check with curl http://<pubip>:5984/ and its output is
+-> Check with curl http://52.70.109.198:5984/ and its output is
 
     {"couchdb":"Welcome","uuid":"<someid>","version":"1.6.0","vendor":{"version":"15.10","name":"Ubuntu"}}
 
@@ -337,31 +336,38 @@ bind_address = 0.0.0.0
 
 ->  Open any Browser enter url 
 
-        http://<pubip>:5984/_utils/index.html
+        http://52.70.109.198:5984/_utils
 
 -----
 
-# Login to MSR-test-Instance-2 using .pem(terrafom)  
+# Login to MSR-test-Instance-2 using ansible user credentials
+
+	
 
 steps:
 
     1.  Execute the ansible playbook
 
-        $ ansible-playbook -i <hostsfilepath> <playbookpath>
+        $ ansible-playbook -i hosts apache_CouchDB.yml
+
+![palybook_exec](https://user-images.githubusercontent.com/43407156/53637505-5520c180-3c49-11e9-8d66-8422d89f81db.JPG)
 
     2. Configure the proxy 
 
-        Open /etc/couchdb/local.ini file and change the below things
+        Open /opt/couchdb/etc/local.ini file and change the below things
 
-            [httpd]
+            [chttpd]
             ;port = 5984
             ;bind_address = 127.0.0.1
 
-            to 
+            To 
 
-            [httpd]
+            [chttpd]
             port = 5984
             bind_address = 0.0.0.0
+
+![proxy](https://user-images.githubusercontent.com/43407156/53637550-75e91700-3c49-11e9-9846-69f0b294d261.JPG)
+
 
     3.  Restart the CouchDB Database
 
@@ -369,7 +375,8 @@ steps:
 
     4.  Open Browser 
 
-        url: html://<pubip>:5984/_utils/index.html
+        url: html://52.70.109.198:5984/_utils
 
+![browse_futon](https://user-images.githubusercontent.com/43407156/53637583-8f8a5e80-3c49-11e9-87ee-6c42f6dab8ba.JPG)
 
 ### Code :  test4/apache_CouchDB.yml file
