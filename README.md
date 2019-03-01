@@ -42,6 +42,16 @@ Steps:
 
         $   terraform apply -var "accesskey=<accesskeycode>" -var "secretkey=<secretkeycode>" <Pathofthecode>
 
+
+![terraform_yes](https://user-images.githubusercontent.com/48052747/53615192-d43ed700-3c02-11e9-8dfd-c8938617a609.JPG)
+	
+![terraform_output](https://user-images.githubusercontent.com/43407156/53615376-99896e80-3c03-11e9-96c7-2caa00ce73c6.JPG)
+
+In AWS Cloud the machines are started
+
+
+![terraform_machine](https://user-images.githubusercontent.com/43407156/53615463-f8e77e80-3c03-11e9-8bd4-d096659a6f8f.JPG)
+
     4.  To destroy the Infrastructure before applied configuration
 
         $   terraform destroy -var "accesskey=<accesskeycode>" -var "secretkey=<secretkeycode>" <Pathofthecode>   
