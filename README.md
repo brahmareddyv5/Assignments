@@ -209,6 +209,7 @@ step:
 
         $ ansible-playbook -i <hostsfilepath> <playbookpath>
 
+![playbook_exec](https://user-images.githubusercontent.com/43407156/53620330-8fbe3600-3c18-11e9-9429-baf2691dae99.JPG)
     
     Check all packages versions
 	
