@@ -285,7 +285,7 @@ bind_address = 0.0.0.0
 
 -----
 
-Login to MSR-test-Instance-2 using .pem(terrafom)  
+# Login to MSR-test-Instance-2 using .pem(terrafom)  
 
 steps:
 
@@ -316,5 +316,4 @@ steps:
         url: html://<pubip>:5984/_utils/index.html
 
 
- Code :  test2/apache_CouchDB.yml file
- ------
+# Code :  test4/apache_CouchDB.yml file
