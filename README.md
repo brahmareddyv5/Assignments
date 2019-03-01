@@ -80,7 +80,7 @@ In AWS Cloud the machines are started
 
 Ansible is a radically simple IT automation system. It handles configuration management, application deployment, cloud provisioning, ad-hoc task-execution, and multinode orchestration. Including zero-downtime rolling updates with load balancers.
 
-# Configure Both machines: 
+## Configure Both machines: 
 -----------------------
 
 -> Create a user(ansible) using "adduser ansible"
@@ -144,7 +144,7 @@ Ansible is a radically simple IT automation system. It handles configuration man
 
 -> NVM stands for Node Version Manager. It can manage and switch between diff Node versions with easily. and we can install diff versions with a single command.
 
- # ANSIBLE Configuration:
+## ANSIBLE Configuration:
 ---------------------
 step:
 
@@ -255,38 +255,53 @@ Github
 
 -> Push the changes using " git push -u origin master"
 
+![sample_html_github](https://user-images.githubusercontent.com/43407156/53629243-1a139380-3c33-11e9-995f-d8b78d899dd6.JPG)
+
 -> Here this sample.html raw url used in the "get_url" module.
 
 -> Finally deployed the sample.html on apache web server using ansible playbook.
 
--> Login to MSR-test-Instance-1 using .pem(terrafom)
+-> Login to MSR-test-Instance-1 using ansible user credentials
 
--> Execute the ansible-playbook -i <hostsfilepath> <pathofCONFIGfile>
+-> Execute the ansible-playbook -i hosts apache.yml
 
--> Open any browser http://<publicip>:sample.html
+-> Open any browser http://52.23.109.53:sample.html
 
 -> Opened the content inside the sample.html
 
-## Login to MSR-test-Instance-1 using .pem(terrafom)  
+## Login to MSR-test-Instance-1 using password
+
+	$ ssh ansible@52.23.109.53
+	
+		Password: ansible123
 
 steps:
 
     1.  Execute the ansible playbook
 
-        $ ansible-playbook -i <hostsfilepath> <playbookpath>
+        $ ansible-playbook -i hosts apache.yml
+
+![sample_html_github](https://user-images.githubusercontent.com/43407156/53630180-7c6d9380-3c35-11e9-8cae-9f48c05e231b.JPG)
 
     2. Open browser 
 
-        url: http://<pubip>:sample.html
+        url: http://52.23.109.53:sample.html
 
+![browse_sample_file](https://user-images.githubusercontent.com/43407156/53630209-914a2700-3c35-11e9-9ed2-eecbf15ced1b.JPG)
 
 ### Code :  test3/apache.yml file
 -------
 ############        Task 04         #############     
 -------------------------------------------------
+
 => Using configuration management tool(Ansible) to automate the entire installation of CouchDB Database.
 
--> Login to MSR-test-Instance-2 using .pem(terrafom)
+-> Login to MSR-test-Instance-2 using Password
+
+	$ ssh ansible@52.23.109.53
+	
+		Password: ansible123
+
 
 -> After Installation using ( ansible-playbook -i <hostsfilepath> <pathofCONFIGfile>) 
 
