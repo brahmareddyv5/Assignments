@@ -1,4 +1,4 @@
- ASSIGNMENT
+#							 ASSIGNMENT
  ----------
 
 
@@ -13,7 +13,7 @@ I used infrastructure automation tools are Terraform and Ansible
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions.
 
 
-# Create two EC2 Instances in AWS Cloud using,
+### Create two EC2 Instances in AWS Cloud using,
 
   Additional Information
   ----------------------
@@ -26,7 +26,7 @@ Terraform is a tool for building, changing, and versioning infrastructure safely
 	
 	-> Hostname of Instance 2 : MSR-test-Instance-2.
     
-# Execute these steps from any operating system which is already installed terraform.
+## Execute these steps from any operating system which is already installed terraform.
 
 Steps:
 
@@ -56,7 +56,7 @@ In AWS Cloud the machines are started
 
         $   terraform destroy -var "accesskey=<accesskeycode>" -var "secretkey=<secretkeycode>" <Pathofthecode>   
 
-## Explanation and Documentation:
+### Explanation and Documentation:
    ------------------------------
 
   Here, I'm using terraform script. 
@@ -80,7 +80,7 @@ In AWS Cloud the machines are started
 
 Ansible is a radically simple IT automation system. It handles configuration management, application deployment, cloud provisioning, ad-hoc task-execution, and multinode orchestration. Including zero-downtime rolling updates with load balancers.
 
-## Configure Both machines: 
+### Configure Both machines: 
 -----------------------
 
 -> Create a user(ansible) using "adduser ansible"
@@ -109,7 +109,7 @@ Ansible is a radically simple IT automation system. It handles configuration man
 	
 ------
 
-# The following software packages are installed using configuration management tool ansible for provisioned instances.
+### The following software packages are installed using configuration management tool ansible for provisioned instances.
 
 •	NVM – Version 0.33.2
 
@@ -127,7 +127,7 @@ Ansible is a radically simple IT automation system. It handles configuration man
 
 -> Copy the code from any storage to the two machines
 
-## Explanation and Documentation:
+### Explanation and Documentation:
    ------------------------------
 
 ->  Install git for VCS (Version Control System) is a Distributed version control tool is used to store different versions of a file in local or remote repository. 
@@ -207,8 +207,7 @@ step:
 		
 ![ping](https://user-images.githubusercontent.com/43407156/53619741-70bea480-3c16-11e9-8da2-97adb5ff5bc2.JPG)
 
-# Execute the ansible playbook
-
+### Execute the ansible playbook
 
 step:
 
@@ -340,9 +339,8 @@ Configuration:
 
 -----
 
-# Login to MSR-test-Instance-2 using ansible user credentials
+### Login to MSR-test-Instance-2 using ansible user credentials
 	
-
 steps:
 
     1.  Execute the ansible playbook
