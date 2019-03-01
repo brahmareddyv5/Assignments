@@ -26,7 +26,26 @@ Terraform is a tool for building, changing, and versioning infrastructure safely
 	
 	-> Hostname of Instance 2 : MSR-test-Instance-2.
     
-    
+# Execute these steps from any operating system which is already installed terraform.
+
+Steps:
+
+    1. To initialize a working directory
+
+        $  terraform init
+
+    2. validate the syntax of the terraform files
+
+        $ terraform validate -var "accesskey=<accesskeycode>" -var "secretkey=<secretkeycode>" <Pathofthecode> 
+
+    3. To create/apply the changes required to reach the desired state of the configuration
+
+        $   terraform apply -var "accesskey=<accesskeycode>" -var "secretkey=<secretkeycode>" <Pathofthecode>
+
+    4.  To destroy the Infrastructure before applied configuration
+
+        $   terraform destroy -var "accesskey=<accesskeycode>" -var "secretkey=<secretkeycode>" <Pathofthecode>   
+   
 # Code : from test1/main.tf
 
 ## Explanation and Documentation:
@@ -118,6 +137,62 @@ Ansible is a radically simple IT automation system. It handles configuration man
 
 -> NVM stands for Node Version Manager. It can manage and switch between diff Node versions with easily. and we can install diff versions with a single command.
 
+ # ANSIBLE Configuration:
+---------------------
+step:
+
+    1. Login to Both machines
+
+        $ ssh -i <.pemfile> ubuntu@<DNS/IP>
+
+    2. Add a user 
+        
+        $ adduser ansible
+
+          enter password 
+          re-enter password
+    
+    3. Add ansible user into visudo file
+
+        $ sudo visudo
+
+            %sudo 
+            ansible (ALL:ALL) NOPASSWD: ALL
+        
+    4. Change PasswordAuthentication no to yes
+
+        $ sudo /etc/ssh/sshd_config
+           PasswordAuthentication yes
+
+    5. Create own hosts file 
+
+        $ sudo vi hosts
+            [WebServer]
+            localhost
+    
+    6. Generate  ssh key 
+
+        $ ssh-keygen
+
+    7. Copy the key
+
+        $ ssh-copy-id ansible@<serverip/nodeip/localhost>
+
+    8. Check the Server and Nodes are pinging are not
+
+        $ ansible -m ping all 
+
+# Execute the ansible playbook
+
+step:
+
+    1. Execute the ansible playbook
+
+        $ ansible-playbook -i <hostsfilepath> <playbookpath>
+
+    
+    Check all packages versions
+ 
  ############        Task 03         #############     
 --------------------------------------------------
 => Using configuration management tool(Ansible) to automate the entire installation of apache and deploy a sample html file from a GitHub repository.
@@ -150,6 +225,19 @@ Github
 -> Open any browser http://<publicip>:sample.html
 
 -> Opened the content inside the sample.html
+
+## Login to MSR-test-Instance-1 using .pem(terrafom)  
+
+steps:
+
+    1.  Execute the ansible playbook
+
+        $ ansible-playbook -i <hostsfilepath> <playbookpath>
+
+    2. Open browser 
+
+        url: http://<pubip>:sample.html
+
 
  Code :  test3/apache.yml file
  ------
@@ -195,37 +283,38 @@ bind_address = 0.0.0.0
 
         http://<pubip>:5984/_utils/index.html
 
+-----
+
+Login to MSR-test-Instance-2 using .pem(terrafom)  
+
+steps:
+
+    1.  Execute the ansible playbook
+
+        $ ansible-playbook -i <hostsfilepath> <playbookpath>
+
+    2. Configure the proxy 
+
+        Open /etc/couchdb/local.ini file and change the below things
+
+            [httpd]
+            ;port = 5984
+            ;bind_address = 127.0.0.1
+
+            to 
+
+            [httpd]
+            port = 5984
+            bind_address = 0.0.0.0
+
+    3.  Restart the CouchDB Database
+
+        $ sudo service couchdb restert
+
+    4.  Open Browser 
+
+        url: html://<pubip>:5984/_utils/index.html
+
+
  Code :  test2/apache_CouchDB.yml file
  ------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
