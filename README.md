@@ -198,6 +198,8 @@ step:
     9. Check the Server and Nodes are pinging are not
 
         $ ansible -i hosts -m ping all 
+		
+![ping](https://user-images.githubusercontent.com/43407156/53619741-70bea480-3c16-11e9-8da2-97adb5ff5bc2.JPG)
 
 # Execute the ansible playbook
 
