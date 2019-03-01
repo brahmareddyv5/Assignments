@@ -168,14 +168,20 @@ step:
         
     4. Change PasswordAuthentication no to yes
 
-        $ sudo /etc/ssh/sshd_config
+        $ sudo vi /etc/ssh/sshd_config
            PasswordAuthentication yes
 	
 		Restart ssh service
 		
 		$ sudo systemctl restart sshd
 		
-    5. Create own hosts file 
+	5. Login to ansible user 
+	
+		$ su ansible
+			
+			Password: ansible123
+		
+    6. Create own hosts file 
 
         $ sudo vi hosts
             [WebServer]
@@ -183,19 +189,19 @@ step:
 			[all]
 			localhost
     
-    6. Generate  ssh key 
+    7. Generate  ssh key 
 
         $ ssh-keygen
 
-    7. Copy the key
+    8. Copy the key
 
         $ ssh-copy-id ansible@localhost
 
-	8. Install ansible packages
+	9. Install ansible packages
 	
 		$ sudo apt-get install ansible -y
 
-    9. Check the Server and Nodes are pinging are not
+    10. Check the Server and Nodes are pinging are not
 
         $ ansible -i hosts -m ping all 
 		
@@ -203,17 +209,24 @@ step:
 
 # Execute the ansible playbook
 
+
 step:
 
-    1. Execute the ansible playbook
+	1. Login with ansible user
+	
+		$ ssh ansible@52.70.109.198
+			
+			password: ansible123
+
+    2. Execute the ansible playbook
 
         $ ansible-playbook -i hosts Packages.yml
 
 ![playbook_exec](https://user-images.githubusercontent.com/43407156/53620330-8fbe3600-3c18-11e9-9429-baf2691dae99.JPG)
     
-	2. Exit terminal and relogin because of nvm tool will affect 
+	3. Exit terminal and relogin because of nvm tool will affect 
 	
-		Perform steps 1 again
+		Perform steps 2 again
 	
     Check all packages versions
 	
